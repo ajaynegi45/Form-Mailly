@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: emailservice
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: YOUR EMAIL ID
+    password: GENERATE APP PASSWORD OF GAMIL ID #https://youtu.be/MkLX85XU5rU?feature=shared
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+logging:
+  level:
+    root: WARN
+
+
