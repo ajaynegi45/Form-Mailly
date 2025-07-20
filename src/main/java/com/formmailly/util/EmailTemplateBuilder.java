@@ -4,6 +4,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailTemplateBuilder {
 
+    /**
+     * Builds an HTML email template with the provided sender details and message content.
+     * @example
+     * String emailTemplate = EmailTemplateBuilder.buildEmail("John Doe", "john.doe@example.com", "Inquiry", "Hello, I have a question about...");
+     * System.out.println(emailTemplate); // Expected output: A formatted HTML email template with provided details.
+     * @param {String} senderName - Name of the sender.
+     * @param {String} senderEmail - Email address of the sender.
+     * @param {String} senderReason - Reason for contacting.
+     * @param {String} messageContent - Content of the message.
+     * @return {String} - A HTML string formatted as an email template.
+     * @description
+     *   - Generates an email template with consistent styling using inline CSS.
+     *   - Ensures the template is responsive by using table formatting.
+     *   - Includes a section for sender details and message within the template.
+     *   - Suitable for rendering within an email client without external dependencies.
+     */
     public String buildEmail(String senderName, String senderEmail, String senderReason, String messageContent) {
         return "<div style=\"font-family:Helvetica,Arial,sans-serif; font-size:16px; margin:0; color:#0b0c0c; background-color:#ffffff\">\n" +
                 "<span style=\"display:none;font-size:1px;color:#fff;max-height:0\"></span>\n" +

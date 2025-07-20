@@ -22,6 +22,19 @@ public class EmailController {
         return "Warning: This endpoint is not intended for public access. Unauthorized usage will be logged.";
     }
 
+    /**
+     * Handles the submission of a contact form and attempts to send an HTML email using the provided form data.
+     * @example
+     * ResponseEntity<?> response = EmailController.handleForm(sampleForm);
+     * System.out.println(response.getBody()); // Expected output {message: "Message sent successfully!"} or {message: "Error sending email", error: "Detailed error message"}
+     * @param {ContactFormDTO} form - The contact form data submitted by the user, containing necessary information for sending the email.
+     * @return {ResponseEntity<?>} - Returns a ResponseEntity containing a success message or error information.
+     * @description
+     *   - Executes emailService.sendHtmlEmail(form) to send the email.
+     *   - The email sending operation might throw exceptions, which are caught and logged.
+     *   - Returns HTTP status 500 on failure with error details.
+     *   - The method is mapped to POST requests.
+     */
     @PostMapping
     public ResponseEntity<?> handleForm(@RequestBody ContactFormDTO form) {
         try {
